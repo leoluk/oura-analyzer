@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="no-referrer" name="referrer"/>
+    <link href="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2/dist/themes/light.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/@shoelace-style/shoelace@2/dist/shoelace.js" type="module"></script>
+    <script src="lib/oura_main.js" type="module"></script>
+    <script src="lib/oura_login.js" type="module"></script>
+    <script src="lib/oura_graph.js" type="module"></script>
+    <title>Leo's Oura Analyzer</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        p {
+            max-width: 700px;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            font-family: sans-serif;
+        }
+    </style>
+    <script type="text/javascript">
+        // Tell IE11 users to go away
+        if (!window.customElements) {
+            alert("Your browser does not support web components and is insecure. Please use any modern browser.");
+        }
+    </script>
+</head>
+<body>
+<div class="container">
+    <h1>
+        Leo's Oura Analyzer
+    </h1>
+    <p>
+        This is a simple tool to analyze your Oura ring data. It is not affiliated with Oura in any way.
+        Your access token is stored in your browser's local storage and nothing is kept server-side.
+        The source code is available on <a href="https://github.com/leoluk/oura-analyzer" target="_blank">GitHub</a>.
+    </p>
+    <sl-divider></sl-divider>
+    <noscript>
+        <p>
+            <b>
+                This page requires JavaScript. Please enable JavaScript in your browser.
+            </b>
+        </p>
+    </noscript>
+    <oura-main></oura-main>
+</div>
+</body>
+</html>
