@@ -27,15 +27,16 @@ async function handleRequest(request) {
         }
     });
 
+    const responseHeaders = new Headers(response.headers);
+    responseHeaders.set("Access-Control-Allow-Origin", "*");
+    responseHeaders.set("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+    responseHeaders.set("Access-Control-Allow-Headers", "Cache-Control, Authorization, Content-Type");
+    responseHeaders.set("Access-Control-Max-Age", "86400");
+
     return new Response(response.body, {
         status: response.status,
         statusText: response.statusText,
-        headers: {
-            "Access-Control-Allow-Origin": "*",
-            "Access-Control-Allow-Methods": "GET, POST, PUT, DELETE, OPTIONS",
-            "Access-Control-Allow-Headers": "Cache-Control, Authorization, Content-Type",
-            "Access-Control-Max-Age": "86400",
-        }
+        headers: responseHeaders,
     });
 }
 
